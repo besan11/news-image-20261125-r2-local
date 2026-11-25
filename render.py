@@ -103,14 +103,14 @@ TRIO = [
     {
         "n": 2, "region": "NORTH AMERICA", "pill": ("OFFICIAL", BLUE),
         "head": "US proposes sweeping tariffs on 14 trading partners",
-        "body": "USTR Jamieson Greer proposes Section 301 duties over \u201cexcess\u201d factory capacity: China 20% (40% if the truce unravels), EU 15%, Vietnam 20%, India 17\u201325%. About 60% of US imports covered. Duties only after a hearing on 25 Jan 2027.",
+        "body": "USTR Jamieson Greer proposes Section 301 duties over \u201cexcess\u201d factory capacity: China 20% (40% if the truce unravels), EU 15%, Vietnam 20%* (35% if talks fail), India 17\u201325%. About 60% of US imports covered. Duties only after a hearing on 25 Jan 2027.",
         "src": "Reuters \u2022 AP 20:00 UTC \u2022 BBC \u2022 Le Monde",
         "art": "tariffs",
     },
     {
         "n": 3, "region": "ASIA", "pill": ("CONFIRMED", (46, 125, 50)),
         "head": "AI sell-off rolls through Asia as chip stocks plunge",
-        "body": "KOSPI \u22126.16% to 4,697.51 \u2014 Korea Exchange triggered a 5-minute sell-side halt. Nikkei \u22122.78%, Taiex \u22124.8%. Samsung \u22129.9%, SK Hynix \u221211.1%, SoftBank \u221214.8%. Nasdaq \u22122% on Wednesday; chip index \u221250% from its June record.",
+        "body": "KOSPI \u22126.16% to 4,697.51 \u2014 Korea Exchange triggered a 5-minute sell-side halt. Nikkei \u22122.78%, Taiex \u22124.8%. Samsung \u22129.9%, SK Hynix \u221211.1%, SoftBank \u221214.8%. Nasdaq \u22120.62% on Wednesday; chip index \u22120.7% after an 8% morning plunge.",
         "src": "Reuters \u2022 AP 20:19 UTC \u2022 BBC 17:48 UTC",
         "art": "rout",
     },
@@ -180,14 +180,14 @@ TIMELINE = [
     ("~06:30", "Cartagena supermarket stormed; 76 freed"),
     ("early hrs", "Hormuz tankers hit mines (IRGC ~09:46 UTC)"),
     ("13:30", "US PCE 3.8% + GDP 4.3% released"),
-    ("afternoon", "Ras Tanura claim; Brent tops $93"),
+    ("afternoon", "Ras Tanura claim; Brent $90.82, \u22120.6%"),
     ("18:23", "UN evacuates Ebola workers in DR Congo"),
     ("evening", "Cairo toll 31 dead; Indonesia mine toll 9 dead"),
 ]
 
 BIG = [
     ("2", "tankers hit mines in Hormuz (3rd claimed)"),
-    ("$93.60", "Brent crude, +2.4% on the day"),
+    ("$90.82", "Brent crude, \u22120.6% on the day"),
     ("\u22126.16%", "KOSPI \u2014 Korea halted selling for 5 min"),
     ("14", "partners face US tariffs; ~60% of imports"),
     ("490,334", "Russian soldiers dead \u2014 leaked data (BBC)"),
@@ -213,8 +213,8 @@ def art_hormuz(d, x, y, w, h):
         d.rectangle([tx + 40, ty - 5, tx + 52, ty], fill=(25, 35, 55))
         d.polygon([(tx + 16, ty - 8), (tx + 24, ty - 24), (tx + 32, ty - 8)], fill=(230, 120, 20))
         d.polygon([(tx + 28, ty - 8), (tx + 38, ty - 28), (tx + 48, ty - 8)], fill=(240, 170, 30))
-        d.ellipse([tx + 42, ty - 34, tx + 60, ty - 18], fill=(110, 110, 110))
-        d.ellipse([tx + 54, ty - 42, tx + 68, ty - 28], fill=(140, 140, 140))
+        d.ellipse([tx + 42, ty - 22, tx + 60, ty - 8], fill=(110, 110, 110))
+        d.ellipse([tx + 54, ty - 30, tx + 68, ty - 16], fill=(140, 140, 140))
     for mx, my in ((x + 140, y + 32), (x + 152, y + 58), (x + 262, y + 34)):
         d.ellipse([mx - 3, my - 3, mx + 3, my + 3], fill=INK)
         d.line([(mx - 6, my), (mx + 6, my)], fill=INK, width=1)
@@ -223,7 +223,7 @@ def art_hormuz(d, x, y, w, h):
 
 def art_tariffs(d, x, y, w, h):
     d.rectangle([x, y, x + w, y + h], fill=PAPER2, outline=GREY)
-    bars = [("CHINA", 20, "20%"), ("EU", 15, "15%"), ("VIETNAM", 20, "20%"), ("INDIA", 21, "17\u201325%")]
+    bars = [("CHINA", 20, "20%"), ("EU", 15, "15%"), ("VIETNAM", 20, "20%*"), ("INDIA", 21, "17\u201325%")]
     base = y + h - 16
     bw = 44
     gap = (w - 4 * bw - 24) // 3
@@ -398,7 +398,7 @@ def main():
           "Kilmar \u00c1brego Garc\u00eda leaves US for Spain (night of 24 Nov) \u2022 Hormuz incidents Mon 23 + Tue 24 Nov \u2022 "
           "COP31 collapse itself (~20\u201323 Nov) \u2022 Mississippi crash itself (Tue 24 Nov) \u2022 Sudan Damazin strikes (Tue night 24 Nov) \u2022 "
           "Andy Taylor's death (Mon 23 Nov).  NOT YET: Thanksgiving Thu 26 Nov \u2022 Macy's parade Sat 28 Nov \u2022 "
-          "tariffs only after 25 Jan 2027 hearing \u2022 Fed decision 8\u20139 Dec \u2022 Steelers vs Broncos Fri 28 Nov.")
+          "tariffs only after 25 Jan 2027 hearing \u2022 Fed decision 8\u20139 Dec \u2022 Steelers vs Broncos Sat 28 Nov.")
     para(d, 536, 943, dc, SANS_R(8), 468, INK, leading=10, max_lines=7)
 
     # footer legend

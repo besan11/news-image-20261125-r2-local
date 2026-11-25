@@ -53,6 +53,17 @@ the image says Wednesday throughout.)
   live news feed was consulted during the build (the entry is a static
   image drawn from the brief).
 
+## Repair 26 Nov 2026 (independent-verifier fixes, all re-verified live)
+
+- Brent: was "$93.60, +2.4% on the day" (strip) and "Brent tops $93" (timeline) — wrong level and direction. Corrected to **$90.82, −0.6% on the day** in both places. Source: Makkler Brent daily history — Nov 25 close $90.82, −0.63% (open $88.38, high $90.88, low $86.95); Nov 24 close $91.40, +2.27% (so the old +2.4% was Tuesday's move). Corroborated by Reuters/Euronext 25 Nov: Brent fell >1% on Wednesday, −1.6% to $89.93 by 0730 GMT, "paring the previous day's gains". Note: one outlier (Morningstar/Dow Jones Data Talk) claimed a $94.61 Wednesday settle; it contradicts the daily history table and the Reuters wire, so it was not used.
+- SOX: deleted the unsupported "chip index −50% from its June record". Now **"chip index −0.7% after an 8% morning plunge"** (Wednesday 25 Nov). Source: techi.com — SOX "fell as much as 8.0% in the morning and closed down 0.7% at 8,774.86"; corroborated by worldmoneyroadmap ("slipped 0.65% to 8,774.86").
+- Nasdaq: "Nasdaq −2% on Wednesday" → **"Nasdaq −0.62% on Wednesday"**. Source: Nasdaq Composite closed Wed 25 Nov −0.62% at 23,585.80 (investingLive, techi.com, MarketWatch; Tuesday's close was −1.48%).
+- DATE CHECK: "Steelers vs Broncos Fri 28 Nov" → **"Sat 28 Nov"** (verified with `date`: 28 Nov 2026 is a Saturday).
+- Hormuz map: smoke ellipses lowered 12 px so the "STRAIT OF HORMUZ" label is fully readable.
+- Vietnam tariff bar: "20%" → **"20%*"**, body now reads "Vietnam 20%* (35% if talks fail)". Source: Kitco/Flexport/HIDA on the USTR 25 Nov proposal — Vietnam 20% only if a reciprocal trade deal is reached, otherwise up to 35%.
+
+Re-rendered entry.png 1024×1024, 216,621 bytes, visually checked at full page + zoomed crops: all six fixes landed, no overlaps or cut-off text.
+
 ## Checks run locally
 
 - `python3 render.py` → entry.png 1024×1024, 215,724 bytes (< 1 MiB),
